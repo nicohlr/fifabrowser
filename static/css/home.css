@@ -3,9 +3,8 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,700,900');
 
 body {
-    background-image: url("../images/homepage_bg.jpg");
+    background: url("../images/homepage_bg.jpg") no-repeat center center fixed;;
     background-size: cover;
-    background-repeat: no-repeat;
     font-family: 'Raleway', sans-serif;
 }
 
@@ -13,13 +12,13 @@ h1 {
     font-size: 3em;
     font-weight: 1;
     font-family: 'Raleway';
-    margin-top: 20%;
+    margin-top: 14%;
     margin-left: 70%;
 }
 
 .search_input {
-    width: 25%;
-    margin-left: 65%;
+    width: 29%;
+    margin-left: 63%;
     padding: 12px 24px;
     transition: transform 250ms ease-in-out;
     font-size: 14px;

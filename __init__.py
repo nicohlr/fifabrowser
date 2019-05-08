@@ -10,8 +10,13 @@ app.secret_key = secret.readline()[:-1]
 
 
 @app.route('/')
-def hello():
+def home():
     return render_template('home.html')
+
+
+@app.route('/request')
+def request():
+    return render_template('request.html')
 
 
 @app.context_processor
@@ -23,8 +28,7 @@ def dated_url_for(endpoint, **values):
     if endpoint == 'static':
         filename = values.get('filename', None)
         if filename:
-            file_path = os.path.join(app.root_path,
-                                 endpoint, filename)
+            file_path = os.path.join(app.root_path, endpoint, filename)
             values['q'] = int(os.stat(file_path).st_mtime)
     return url_for(endpoint, **values)
 
