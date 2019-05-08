@@ -1,10 +1,8 @@
-console.log('coucou');
-
 $('input[class="search_input"]').autoComplete({
     minChars: 1,
     source: function(term, suggest){
         term = term.toLowerCase();
-        var choices = [['Australia', 'au'], ['Austria', 'at'], ['Brasil', 'br']];
+        var choices = [['Australia'], ['Austria'], ['Brasil']];
         var suggestions = [];
         for (i=0;i<choices.length;i++)
             if (~(choices[i][0]+' '+choices[i][1]).toLowerCase().indexOf(term)) suggestions.push(choices[i]);
