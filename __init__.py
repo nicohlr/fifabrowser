@@ -13,16 +13,16 @@ def home():
     if request.method == 'POST':
 
         if player_form.validate():
-            return redirect('player', playername=)
+            return redirect(url_for('player', name=request.form["player"]))
     else:
         flash('All the form fields are required. ')
 
     return render_template('home.html', form=player_form)
 
 
-@app.route('/player')
-def player(playername):
-    return render_template('player.html', player=playername)
+@app.route('/player_<name>')
+def player(name=None):
+    return render_template('player.html', name=name)
 
 
 @app.context_processor

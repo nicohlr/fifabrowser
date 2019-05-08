@@ -9,6 +9,7 @@
     <h1>Browser</h1>
     <div class="search_container">
         <form action="" method="post" novalidate>
+            {{ form.csrf_token }}
             {{ form.player(class="search_input", type="text", placeholder="Search player") }}
         </form>
     </div>
