@@ -4,3 +4,7 @@
     {{ super() }}
     <link href="{{ url_for('static', filename='css/player.css') }}" rel="stylesheet" type="text/css">
 {% endblock %}
+
+{% block body %}
+    <h1>{{ name }}</h1>
+{% endblock %}

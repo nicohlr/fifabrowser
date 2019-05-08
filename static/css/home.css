@@ -81,3 +81,13 @@ h1 {
     margin-left: -3.3%;
     border: none;
 }
+
+.autocomplete-suggestions {
+    margin-top: -14%;
+    margin-left: -8px;
+    border-radius: 0 0 5px 5px;
+}
+
+.autocomplete-suggestion {
+    background: #F5F5F5;
+}
