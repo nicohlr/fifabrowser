@@ -1,19 +1,28 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, redirect, flash, request
 import os
 from config import Config
+from form import PlayerForm
 
 app = Flask(__name__)
 app.config.from_object(Config)
 
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def home():
-    return render_template('home.html')
+    player_form = PlayerForm(request.form)
+    if request.method == 'POST':
+
+        if player_form.validate():
+            return redirect('player', playername=)
+    else:
+        flash('All the form fields are required. ')
+
+    return render_template('home.html', form=player_form)
 
 
-@app.route('/request')
-def request():
-    return render_template('request.html')
+@app.route('/player')
+def player(playername):
+    return render_template('player.html', player=playername)
 
 
 @app.context_processor

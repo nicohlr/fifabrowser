@@ -8,6 +8,8 @@
 {% block body %}
     <h1>Browser</h1>
     <div class="search_container">
-        <input class="search_input" type="text" placeholder="Search player">
+        <form action="" method="post" novalidate>
+            {{ form.player(class="search_input", type="text", placeholder="Search player") }}
+        </form>
     </div>
 {% endblock %}
