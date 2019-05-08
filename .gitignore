@@ -104,4 +104,4 @@ venv.bak/
 .mypy_cache/
 
 .idea/
-secret.txt
+secret_key.txt

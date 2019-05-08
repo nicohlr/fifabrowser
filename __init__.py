@@ -1,12 +1,9 @@
 from flask import Flask, render_template, url_for
 import os
+from config import Config
 
 app = Flask(__name__)
-app.debug = True
-app.static_folder = 'static'
-
-secret = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'utils/secret.txt'))
-app.secret_key = secret.readline()[:-1]
+app.config.from_object(Config)
 
 
 @app.route('/')
@@ -34,4 +31,5 @@ def dated_url_for(endpoint, **values):
 
 
 if __name__ == '__main__':
+    print(app.secret_key)
     app.run()
