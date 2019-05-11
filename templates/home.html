@@ -19,6 +19,6 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
           crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-autocomplete/1.0.7/jquery.auto-complete.min.js"></script>
-    <script>var players_list = Array.from({{ players_list|safe }}); var players_pattern = {{ players_pattern|safe }};</script>
+    <script>var players_list = Array.from({{ players_list|safe }}); var players_pattern = {{ players_pattern|tojson }};</script>
     <script src="{{ url_for('static', filename='js/home.js') }}"></script>
 {% endblock %}

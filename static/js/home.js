@@ -1,4 +1,4 @@
-console.log(players_pattern)
+console.log(typeof(players_pattern))
 document.getElementsByClassName("search_input")[0].setAttribute("pattern", players_pattern);
 
 $('input[class="search_input"]').autoComplete({
