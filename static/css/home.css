@@ -90,4 +90,9 @@ h1 {
 
 .autocomplete-suggestion {
     background: #F5F5F5;
+    color: #666;
+}
+
+.autocomplete-suggestion b {
+    color: #F50064;
 }

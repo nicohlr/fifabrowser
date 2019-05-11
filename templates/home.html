@@ -2,8 +2,8 @@
 
 {% block head %}
     {{ super() }}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-autocomplete/1.0.7/jquery.auto-complete.min.css" rel="stylesheet" type="text/css">
     <link href="{{ url_for('static', filename='css/home.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ url_for('static', filename='css/jquery.auto-complete.css') }}" rel="stylesheet" type="text/css">
 {% endblock %}
 
 {% block body %}
@@ -17,7 +17,7 @@
 
 {% block scripts %}
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-      crossorigin="anonymous"></script>
-    <script src="{{ url_for('static', filename='js/jquery.auto-complete.min.js') }}"></script>
+          crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-autocomplete/1.0.7/jquery.auto-complete.min.js"></script>
     <script src="{{ url_for('static', filename='js/home.js') }}"></script>
 {% endblock %}
