@@ -17,7 +17,8 @@ def home():
     if request.method == 'POST':
 
         if player_form.validate():
-            return redirect(url_for('player', name=request.form["player"]))
+
+            return redirect(url_for('player', name=request.form["player"].replace('. ', '_').replace(' ', '_')))
     else:
         flash('All the form fields are required. ')
 

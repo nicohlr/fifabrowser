@@ -10,7 +10,7 @@
     <h1>Browser</h1>
         <form action="" method="post" novalidate>
             {{ form.csrf_token }}
-            {{ form.player(class="search_input", type="text", placeholder="Search player") }}
+            {{ form.player(class="search_input", type="text", placeholder="Search player", pattern="") }}
             <input type="submit" class="search_validate" value=" ">
         </form>
 {% endblock %}

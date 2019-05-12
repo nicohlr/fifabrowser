@@ -1,5 +1,9 @@
-console.log(typeof(players_pattern))
-document.getElementsByClassName("search_input")[0].setAttribute("pattern", players_pattern);
+document.getElementsByClassName("search_input")[0].setAttribute("required", "required");
+document.getElementsByClassName("search_input")[0].setAttribute("pattern", "aaa|bbb");
+
+document.getElementsByClassName("search_input")[0].oninvalid = function(event) {
+    event.target.setCustomValidity('Username should only contain lowercase letters. e.g. john');
+}
 
 $('input[class="search_input"]').autoComplete({
     minChars: 2,

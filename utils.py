@@ -9,4 +9,4 @@ def get_player_list():
 
 def get_player_pattern():
     df = pd.read_csv('data/data.csv')
-    return df['Name'].to_string(index=False).replace(' ', '').replace('\n', '|')
+    return df['Name'].to_string(index=False).replace('  ', '').replace('\n ', '|').replace('\n', '|')
