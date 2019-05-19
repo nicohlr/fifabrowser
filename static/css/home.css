@@ -1,16 +1,3 @@
-@use postcss-color-function;
-@use postcss-nested;
-@import url('https://fonts.googleapis.com/css?family=Raleway:400,700,900');
-
-body {
-    background: url("../images/homepage_bg.jpg") no-repeat center center fixed;;
-    background-size: cover;
-    font-family: 'Raleway', sans-serif;
-    z-index: -1;
-    position:relative;
-    overflow: hidden;
-}
-
 h1 {
     font-size: 300%;
     font-weight: 1;

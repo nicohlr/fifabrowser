@@ -6,14 +6,12 @@
 {% endblock %}
 
 {% block body %}
-    {% for attr in attributes %}
-        {{ attr }}
-    {% endfor %}
+    <h1 class="playername">{{ attributes['Name'] }}</h1>
 {% endblock %}
 
 
 {% block scripts %}
     {{ super() }}
-    <script>var players_list = Array.from({{ players_list|safe }}); var players_pattern = {{ players_pattern|tojson }};</script>
+    <script>var attributes = {{ attributes|safe }}</script>
     <script src="{{ url_for('static', filename='js/player.js') }}"></script>
 {% endblock %}

@@ -20,4 +20,4 @@ def get_player_attributes(playername):
          'LF', 'CF', 'RF', 'RW', 'LAM', 'CAM', 'RAM', 'LM', 'LCM', 'CM', 'RCM', 'RM', 'LWB', 'LDM', 'CDM', 'RDM', 'RWB',
          'LB', 'LCB', 'CB', 'RCB', 'RB', ], 1).columns.tolist()[2:-1]]
 
-    return df[df['Name'] == playername].to_dict('r')
+    return df[df['Name'] == playername].to_dict('r')[0]
