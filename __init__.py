@@ -1,8 +1,8 @@
-from flask import Flask, render_template, url_for, redirect, flash, request
+from flask import Flask, render_template, url_for, redirect, flash, request, session
 import os
 from config import Config
 from form import PlayerForm
-from utils import get_player_list, get_player_pattern
+from utils import get_player_list, get_player_pattern, get_player_attributes
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -17,8 +17,9 @@ def home():
     if request.method == 'POST':
 
         if player_form.validate():
-
+            session['playername'] = request.form['player']
             return redirect(url_for('player', name=request.form["player"].replace('. ', '_').replace(' ', '_')))
+
     else:
         flash('All the form fields are required. ')
 
@@ -27,7 +28,9 @@ def home():
 
 @app.route('/player_<name>')
 def player(name=None):
-    return render_template('player.html', name=name)
+    playername = session.get('playername', None).strip()
+    attributes = get_player_attributes(playername=playername)
+    return render_template('player.html', attributes=attributes)
 
 
 @app.context_processor
