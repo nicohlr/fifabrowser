@@ -12,11 +12,15 @@ body {
 }
 
 h1 {
-    font-size: 3em;
+    font-size: 300%;
     font-weight: 1;
     font-family: 'Raleway';
-    margin-top: 14%;
+    margin-top: 30vh;
     margin-left: 70%;
+}
+
+form {
+    margin-top: 5%;
 }
 
 .search_input {
