@@ -7,6 +7,13 @@
 
 {% block body %}
     {% for attr in attributes %}
-        attr
+        {{ attr }}
     {% endfor %}
+{% endblock %}
+
+
+{% block scripts %}
+    {{ super() }}
+    <script>var players_list = Array.from({{ players_list|safe }}); var players_pattern = {{ players_pattern|tojson }};</script>
+    <script src="{{ url_for('static', filename='js/player.js') }}"></script>
 {% endblock %}
