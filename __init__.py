@@ -1,11 +1,18 @@
 from flask import Flask, render_template, url_for, redirect, flash, request, session
 import os
-from config import Config
+import sys
+import webbrowser
 from form import PlayerForm
-from utils import get_player_list, get_player_pattern, get_player_attributes
+from utils import get_player_list, get_player_pattern, get_player_attributes, resource_path
 
-app = Flask(__name__)
-app.config.from_object(Config)
+if getattr(sys, 'frozen', False):
+    template_folder = os.path.join(sys._MEIPASS, 'templates')
+    static_folder = os.path.join(sys._MEIPASS, 'static')
+    app = Flask(__name__, template_folder=template_folder, static_folder=static_folder)
+else:
+    app = Flask(__name__)
+
+app.secret_key = open(resource_path('secret_key.txt')).readline()[:-1]
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -27,7 +34,7 @@ def home():
 
 
 @app.route('/player_<name>')
-def player(name=None):
+def player(name):
     playername = session.get('playername', None).strip()
     attributes = get_player_attributes(playername=playername)
     return render_template('player.html', attributes=attributes)
@@ -48,4 +55,5 @@ def dated_url_for(endpoint, **values):
 
 
 if __name__ == '__main__':
-    app.run()
+    # webbrowser.open('http://localhost:5000')
+    app.run(debug=True)

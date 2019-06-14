@@ -7,12 +7,15 @@
 {% endblock %}
 
 {% block body %}
+    <div class="search_container">
     <h1>Browser</h1>
-        <form action="" method="post" novalidate>
+        <form action="" method="post" class="flex-form" autocomplete="off">
             {{ form.csrf_token }}
-            {{ form.player(class="search_input", type="text", placeholder="Search player", pattern="") }}
-            <input type="submit" class="search_validate" value=" ">
+            <i class="fa fa-map-marker" aria-hidden="true" id="location"></i>
+            {{ form.player(type="search", id="address_textfield", class="form_player", placeholder="Search player", list="players_list", oninput="setCustomValidity('')") }}
+            <input type="submit" class="fa fa-input" value="&#xf002; Search">
         </form>
+    </div>
 {% endblock %}
 
 {% block scripts %}
