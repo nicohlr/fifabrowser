@@ -21,5 +21,10 @@ h1.playername {
 .stats-container {
     margin-top: 1%;
     float: left;
-    width: 45%;
+    width: 35%;
+    border-left: 2px solid lightgrey;
+}
+
+.stats-container > * {
+    padding-left: 20%;
 }
