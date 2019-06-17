@@ -8,6 +8,9 @@
 {% block body %}
     <div class="dashboard">
         <h1 class="playername">{{ attributes['Name'] }}</h1>
+        <div class="chart-container">
+            <canvas id="myChart" width="200" height="200"></canvas>
+        </div>
     </div>
 {% endblock %}
 
@@ -15,5 +18,6 @@
 {% block scripts %}
     {{ super() }}
     <script>var attributes = {{ attributes|safe }}</script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.js"></script>
     <script src="{{ url_for('static', filename='js/player.js') }}"></script>
 {% endblock %}
