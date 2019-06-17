@@ -8,7 +8,16 @@
 }
 
 /* FORM */
-.flex-form input[type="submit"] {
+input[type="search"] {
+    flex-basis: 600px;
+    width: 100%;
+}
+
+input:invalid {
+    box-shadow: none;
+}
+
+input[type="submit"] {
     font-family: FontAwesome, "Raleway", Verdana, sans-serif;
     background: #ef3f5a;
     border: 1px solid #ef3f5a;
@@ -21,7 +30,7 @@
     border-radius: 0px 6px 6px 0px;
 }
 
-.flex-form input[type="submit"]:hover {
+input[type="submit"]:hover {
     background: #d73851;
     border: 1px solid #d73851;
 }
@@ -49,15 +58,6 @@
     -webkit-appearance: none;
 }
 
-input[type="search"] {
-    flex-basis: 600px;
-    width: 100%;
-}
-
-input:invalid {
-    box-shadow: none;
-}
-
 /* AUTOCOMPLETE */
 .autocomplete-suggestions {
     border-radius: 6px 6px 6px 6px;
@@ -65,14 +65,15 @@ input:invalid {
     top: 0px !important;
     margin-left: -8px !important;
     position: relative;
-    padding-top: 5px;
-    max-height: 259px;
     background: #fcfffc;
 }
 
 .autocomplete-suggestion {
     background: #fcfffc;
     color: #666;
+}
+
+.autocomplete-suggestion img {
     vertical-align: middle;
 }
 
@@ -81,15 +82,14 @@ input:invalid {
 }
 
 /* RESPONSIVE DESIGN */
-@media all and (max-width:900px) {
-    header nav li{
-        margin: 0 10px;
+@media all and (max-width:1000px) {
+    .search_container {
+        width: 80% !important;
+        margin-left: 10% !important;
+        width: 80% !important;
     }
 
     .flex-form {
-        background: #fcfffc;
-        display: -webkit-box;
-        display: flex;
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
         flex-direction: column;
@@ -104,28 +104,13 @@ input:invalid {
         flex-basis: 0;
     }
 
-    label {
-        display: none;
-    }
-
-    .search_container {
-        width: 80% !important;
-        margin-left: 10% !important;
-        width: 80% !important;
+    input[type="submit"] {
+        border-radius: 0px 0px 6px 6px !important;
     }
 
     body {
-        background: url("../img/homepage_bg_min.jpg") no-repeat center center fixed;;
+        background: url("../img/homepage_bg_min.jpg") no-repeat center center fixed;
         background-size: cover;
-        font-family: 'Raleway', sans-serif;
-        z-index: -1;
-        position:relative;
-        overflow: hidden;
-        text-align: center;
-    }
-
-    .flex-form input[type="submit"] {
-        border-radius: 0px 0px 6px 6px !important;
     }
 
 }
