@@ -10,3 +10,16 @@ h1.playername {
     margin-top: 3%;
     font-size: 250%;
 }
+
+.chart-container {
+    margin-top: 1%;
+    float: left;
+    width: 45%;
+    margin-left: 5%;
+}
+
+.stats-container {
+    margin-top: 1%;
+    float: left;
+    width: 45%;
+}
