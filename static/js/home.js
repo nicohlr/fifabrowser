@@ -1,9 +1,9 @@
 var player_field = document.getElementsByClassName("form_player")
 player_field[0].setAttribute("required", "required");
-player_field[0].setAttribute("pattern", "aaa|bbb");
+player_field[0].setAttribute("pattern", "Cristiano Ronaldo|bbb");
 
 player_field[0].oninvalid = function(event) {
-    event.target.setCustomValidity('Username should only contain lowercase letters. e.g. john');
+    event.target.setCustomValidity('Player must be chosen among the list of players');
 }
 
 $('input[class="form_player"]').autoComplete({
@@ -24,6 +24,6 @@ $('input[class="form_player"]').autoComplete({
     },
     onSelect: function(e, term, item){
         e.preventDefault();
-        $('input[class="search_input"]').val(item.data('langname'));
-    }
+        $('input[class="form_player"]').val(item.data('langname'));
+    },
 });
