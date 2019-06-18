@@ -16,27 +16,27 @@
             <div class="potential"><a>Potential {{ attributes['Potential'] }}</a></div>
             <div class="other">
                 <li class="label"><a>Age&nbsp&nbsp&nbsp<strong>{{ attributes['Age'] }}</strong></a></li>
-                <li class="label"><a>Height&nbsp&nbsp&nbsp<strong>{{ attributes['Height'] }} / {{ (0.3048*attributes['Height'].replace("'", ".")|float)|round(2) }}m</strong></a></li>
-                <li class="label"><a>Weight&nbsp&nbsp&nbsp<strong>{{ attributes['Weight'] }} / {{ (0.453592*attributes['Weight'][:-3]|int)|int }}kg</strong></a></li>
+                <li class="label"><a>Height&nbsp&nbsp&nbsp<strong>{{ attributes['Height'] }}&nbsp&nbsp-&nbsp&nbsp{{ (0.3048*attributes['Height'].replace("'", ".")|float)|round(2) }}m</strong></a></li>
+                <li class="label"><a>Weight&nbsp&nbsp&nbsp<strong>{{ attributes['Weight'] }}&nbsp&nbsp-&nbsp&nbsp{{ (0.453592*attributes['Weight'][:-3]|int)|int }}kg</strong></a></li>
                 <li class="label"><a>Preferred Foot&nbsp&nbsp&nbsp<strong>{{ attributes['Preferred Foot'] }}</strong></a></li>
-                <li class="label"><a>International Reputation&nbsp&nbsp&nbsp<strong>{{ attributes['International Reputation'] }}</strong>&nbsp&nbsp</a>
-                    {% for i in range(attributes['International Reputation']|int) %}
-                        <img class="image_risk" src="{{ url_for('static', filename='img/star.svg') }}" width="4%">
-                    {% endfor %}
-                </li>
-                <li class="label"><a>Weak Foot&nbsp&nbsp&nbsp<strong>{{ attributes['Weak Foot'] }}</strong>&nbsp&nbsp</a>
+                <li class="label"><a>Position&nbsp&nbsp&nbsp<strong>{{ attributes['Position'] }}</strong></a></li>
+                <li class="label"><a>Jersey Number&nbsp&nbsp&nbsp<strong>{{ attributes['Jersey Number']|int }}</strong></a></li>
+                <li class="label"><a>Weak Foot&nbsp&nbsp&nbsp</a>
                     {% for i in range(attributes['Weak Foot']|int) %}
                         <img class="image_risk" src="{{ url_for('static', filename='img/star.svg') }}" width="4%">
                     {% endfor %}
                 </li>
-                <li class="label"><a>Skill Moves&nbsp&nbsp&nbsp<strong>{{ attributes['Skill Moves'] }}</strong>&nbsp&nbsp</a>
+                <li class="label"><a>Skill Moves&nbsp&nbsp&nbsp</a>
                     {% for i in range(attributes['Skill Moves']|int) %}
                         <img class="image_risk" src="{{ url_for('static', filename='img/star.svg') }}" width="4%">
                     {% endfor %}
                 </li>
                 <li class="label"><a>Work Rate (Attack - Defense)&nbsp&nbsp&nbsp<strong>{{ attributes['Work Rate'] }}</strong></a></li>
-                <li class="label"><a>Position&nbsp&nbsp&nbsp<strong>{{ attributes['Position'] }}</strong></a></li>
-                <li class="label"><a>Jersey Number&nbsp&nbsp&nbsp<strong>{{ attributes['Jersey Number'] }}</strong></a></li>
+                <li class="label"><a>International Reputation&nbsp&nbsp&nbsp</a>
+                    {% for i in range(attributes['International Reputation']|int) %}
+                        <img class="image_risk" src="{{ url_for('static', filename='img/star.svg') }}" width="4%">
+                    {% endfor %}
+                </li>
             </div>
         </div>
     </div>
