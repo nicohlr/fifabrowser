@@ -1,14 +1,14 @@
 var describe_attributes = {
     'Pace': ['Acceleration: ' + attributes['Acceleration'], 'Sprint speed: ' + attributes['SprintSpeed']],
-    'Dribbling': [attributes[''], attributes['']],
-    'Shooting': [attributes[''], attributes['']],
-    'Defending': [attributes[''], attributes['']],
-    'Passing': [attributes[''], attributes['']],
-    'Physicality': [attributes[''], attributes['']]
+    'Dribbling': ['Agility: ' + attributes['Agility'], 'Balance: ' + attributes['Balance'], 'Ball control: ' + attributes['BallControl'], 'Composure: ' + attributes['Composure'], 'Dribbling: ' + attributes['Dribbling'], 'Reactions: ' + attributes['Reactions']],
+    'Shooting': ['Finishing: ' + attributes['Finishing'], 'Long shots: ' + attributes['LongShots'], 'Penalties: ' + attributes['Penalties'], 'Positioning: ' + attributes['Positioning'], 'Shot power: ' + attributes['ShotPower'], 'Volleys: ' + attributes['Volleys']],
+    'Defending': ['Heading: ' + attributes['HeadingAccuracy'], 'Interceptions: ' + attributes['Interceptions'], 'Marking: ' + attributes['Marking'], 'Sliding tackle: ' + attributes['SlidingTackle'], 'Standing tackle: ' + attributes['StandingTackle'],],
+    'Passing': ['Crossing: ' + attributes['Crossing'], 'Curve: ' + attributes['Curve'], 'Free kick: ' + attributes['FKAccuracy'], 'Long passing: ' + attributes['LongPassing'], 'Short passing: ' + attributes['ShortPassing'], 'Vision: ' + attributes['Vision']],
+    'Physicality': ['Aggression: ' + attributes['Aggression'], 'Jumping: ' + attributes['Jumping'], 'Stamina: ' + attributes['Stamina'], 'Strength: ' + attributes['Strength']]
 }
 
 $('.help').qtip({
-    content: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    content: "You can hover the points of the radar chart to have detailled statistics on this player.",
     style: { classes: 'qtip-bootstrap' },
     position: {
         my: "top left",
