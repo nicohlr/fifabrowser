@@ -30,12 +30,20 @@ h1 > * {
     margin-bottom: 0.75%;
 }
 
+/* TITLE */
+
 h1 {
     font-weight: 100;
     text-align: center;
     margin-top: 3%;
     color: #757575;
     font-size: 7vh;
+    margin-bottom: 0vh;
+}
+
+.logo {
+    margin-left: -2vw;
+    margin-top: 7vh;
 }
 
 /* CHART */

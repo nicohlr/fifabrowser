@@ -1,4 +1,10 @@
 var describe_attributes = {
+    'Pace': ['Acceleration: ' + attributes['Acceleration'], 'Sprint speed: ' + attributes['SprintSpeed']],
+    'Dribbling': [attributes[''], attributes['']],
+    'Shooting': [attributes[''], attributes['']],
+    'Defending': [attributes[''], attributes['']],
+    'Passing': [attributes[''], attributes['']],
+    'Physicality': [attributes[''], attributes['']]
 }
 
 $('.help').qtip({
@@ -40,10 +46,8 @@ window.onload = function () {
             ]
         },
         options: {
-            scale: {
-                pointLabels: {
-                  fontSize: 200
-                }
+            legend: {
+                display: false
             },
             responsive: true,
             maintainAspectRatio: false,
