@@ -7,13 +7,13 @@
 
 {% block body %}
     <div class="dashboard">
-        <h1 class="playername"><a>{{ attributes['Name'] }}&nbsp</a><img src="{{ attributes['Photo'] }}" width="48px"></h1>
+        <h1 class="playername"><a>{{ attributes['Name'] }}&nbsp</a><img src="{{ attributes['Photo'] }}" width="4%"></h1>
         <div class="chart-container">
             <canvas id="myChart"></canvas>
         </div>
         <div class="stats-container">
-            <div class="overall"><a>Overall {{ attributes['Overall'] }}</a></div>
-            <div class="potential"><a>Potential {{ attributes['Potential'] }}</a></div>
+            <div class="overall"><a>Overall <strong>{{ attributes['Overall'] }}</strong></a></div>
+            <div class="potential"><a>Potential <strong>{{ attributes['Potential'] }}</strong></a></div>
             <div class="other">
                 <li class="label"><a>Age&nbsp&nbsp&nbsp<strong>{{ attributes['Age'] }}</strong></a></li>
                 <li class="label"><a>Height&nbsp&nbsp&nbsp<strong>{{ attributes['Height'] }}&nbsp&nbsp-&nbsp&nbsp{{ (0.3048*attributes['Height'].replace("'", ".")|float)|round(2) }}m</strong></a></li>

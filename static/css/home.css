@@ -9,7 +9,6 @@
 
 /* FORM */
 input[type="search"] {
-    flex-basis: 600px;
     width: 100%;
 }
 
@@ -100,10 +99,6 @@ input[type="submit"]:hover {
         font-size: 0.9rem;
     }
 
-    input[type="search"] {
-        flex-basis: 0;
-    }
-
     input[type="submit"] {
         border-radius: 0px 0px 6px 6px !important;
     }
@@ -112,16 +107,12 @@ input[type="submit"]:hover {
         background: url("../img/homepage_bg_min.jpg") no-repeat center center fixed;
         background-size: cover;
     }
-
 }
 
 /* DELETE BROWSER FEATURES */
 
-/* clears the 'X' from Internet Explorer */
 input[type=search]::-ms-clear {  display: none; width : 0; height: 0; }
 input[type=search]::-ms-reveal {  display: none; width : 0; height: 0; }
-
-/* clears the 'X' from Chrome */
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,

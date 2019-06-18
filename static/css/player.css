@@ -9,6 +9,7 @@ h1.playername {
     text-align: center;
     margin-top: 3%;
     font-size: 250%;
+    font-size: 7vh;
 }
 
 .chart-container {
@@ -23,7 +24,8 @@ h1.playername {
     margin-top: 1%;
     float: left;
     width: 35%;
-    border-left: 2px solid lightgrey;
+    border-left: solid lightgrey;
+    border-width: 0.1vw;
 }
 
 .stats-container > * {
@@ -38,13 +40,13 @@ h1.playername {
 .overall, .potential {
     width: 30%;
     height: 10%;
-    background: lightgreen;
     border-radius: 5px;
     padding: 3% 0%;
     text-align: center;
     margin: 3% 25%;
     float: left;
     color: white;
+    font-size: 2.5vh;
 }
 
 .other {
@@ -52,6 +54,7 @@ h1.playername {
     color: #757575;
     width: 100%;
     margin-top: 2%;
+    font-size: 2.5vh;
 }
 
 .potential {

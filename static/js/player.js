@@ -47,4 +47,36 @@ window.onload = function () {
             }
         }
     });
+
+    if (attributes['Overall'] >= 80) {
+        $('.overall').css('background', '#1A7E52')
+    }
+    else if (70<=attributes['Overall'] && attributes['Overall']<80) {
+        $('.overall').css('background', '#9FBE32')
+    }
+    else if (60<=attributes['Overall'] && attributes['Overall']<70) {
+        $('.overall').css('background', '#FECF45')
+    }
+    else if (50<=attributes['Overall'] && attributes['Overall']<60) {
+        $('.overall').css('background', '#EB802D')
+    }
+    else {
+        $('.overall').css('background', '#D13E20')
+    }
+
+    if (attributes['Potential'] >= 80) {
+        $('.potential').css('background', '#1A7E52')
+    }
+    else if (70<=attributes['Potential'] && attributes['Potential']<80) {
+        $('.potential').css('background', '#9FBE32')
+    }
+    else if (60<=attributes['Potential'] && attributes['Potential']<70) {
+        $('.potential').css('background', '#FECF45')
+    }
+    else if (50<=attributes['Potential'] && attributes['Potential']<60) {
+        $('.potential').css('background', '#EB802D')
+    }
+    else {
+        $('.potential').css('background', '#D13E20')
+    }
 }
