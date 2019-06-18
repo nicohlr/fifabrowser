@@ -1,16 +1,9 @@
 body {
     background: url("../img/playerpage_bg.jpg") no-repeat center center fixed;
     background-size: cover;
-    font-family: 'Raleway', sans-serif;
 }
 
-h1.playername {
-    font-weight: 100;
-    text-align: center;
-    margin-top: 3%;
-    color: #757575;
-    font-size: 7vh;
-}
+/* CONTAINERS */
 
 .chart-container {
     margin-top: 1%;
@@ -32,10 +25,27 @@ h1.playername {
     padding-left: 25%;
 }
 
+h1 > * {
+    vertical-align: middle;
+    margin-bottom: 0.75%;
+}
+
+h1 {
+    font-weight: 100;
+    text-align: center;
+    margin-top: 3%;
+    color: #757575;
+    font-size: 7vh;
+}
+
+/* CHART */
+
 #myChart {
     width:100%;
     height:100%;
 }
+
+/* STATS */
 
 .overall, .potential {
     width: 30%;
@@ -69,10 +79,7 @@ h1.playername {
     vertical-align: middle;
 }
 
-h1 > * {
-    vertical-align: middle;
-    margin-bottom: 0.75%;
-}
+/* BUTTONS */
 
 .btn {
     border-radius: 15px;
@@ -94,22 +101,16 @@ h1 > * {
     margin-left: 14vw;
 }
 
-.fa-arrow-left {
-    -webkit-text-stroke: 1px #F5F5F5;
-}
-
-.fa-question {
+.fa {
     vertical-align: top;
     -webkit-text-stroke: 1px #F5F5F5;
 }
 
-.btn:hover > .fa-arrow-left {
+.btn:hover > .fa {
     -webkit-text-stroke: 0.01px #757575;
 }
 
-.btn:hover > .fa-question {
-    -webkit-text-stroke: 0.01px #757575;
-}
+/* QTIPS */
 
 .qtip-bootstrap {
     background: #F5F5F5;
