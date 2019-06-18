@@ -26,3 +26,7 @@ body {
     position:relative;
     overflow: hidden;
 }
+
+li {
+    list-style-type: none;
+}

@@ -7,23 +7,37 @@
 
 {% block body %}
     <div class="dashboard">
-        <h1 class="playername">{{ attributes['Name'] }}</h1>
+        <h1 class="playername"><a>{{ attributes['Name'] }}&nbsp</a><img src="{{ attributes['Photo'] }}" width="48px"></h1>
         <div class="chart-container">
-            <canvas id="myChart" width="400" height="400"></canvas>
+            <canvas id="myChart"></canvas>
         </div>
         <div class="stats-container">
-            <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-            <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-            <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-            <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-            <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-            <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-            <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-            <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-            <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-            <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-            <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-            <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+            <div class="overall"><a>Overall {{ attributes['Overall'] }}</a></div>
+            <div class="potential"><a>Potential {{ attributes['Potential'] }}</a></div>
+            <div class="other">
+                <li class="label"><a>Age&nbsp&nbsp&nbsp<strong>{{ attributes['Age'] }}</strong></a></li>
+                <li class="label"><a>Height&nbsp&nbsp&nbsp<strong>{{ attributes['Height'] }}</strong></a></li>
+                <li class="label"><a>Weight&nbsp&nbsp&nbsp<strong>{{ attributes['Weight'] }}</strong></a></li>
+                <li class="label"><a>Preferred Foot&nbsp&nbsp&nbsp<strong>{{ attributes['Preferred Foot'] }}</strong></a></li>
+                <li class="label"><a>International Reputation&nbsp&nbsp&nbsp<strong>{{ attributes['International Reputation'] }}</strong>&nbsp&nbsp</a>
+                    {% for i in range(attributes['International Reputation']|int) %}
+                        <img class="image_risk" src="{{ url_for('static', filename='img/star.svg') }}" width="4%">
+                    {% endfor %}
+                </li>
+                <li class="label"><a>Weak Foot&nbsp&nbsp&nbsp<strong>{{ attributes['Weak Foot'] }}</strong>&nbsp&nbsp</a>
+                    {% for i in range(attributes['Weak Foot']|int) %}
+                        <img class="image_risk" src="{{ url_for('static', filename='img/star.svg') }}" width="4%">
+                    {% endfor %}
+                </li>
+                <li class="label"><a>Skill Moves&nbsp&nbsp&nbsp<strong>{{ attributes['Skill Moves'] }}</strong>&nbsp&nbsp</a>
+                    {% for i in range(attributes['Skill Moves']|int) %}
+                        <img class="image_risk" src="{{ url_for('static', filename='img/star.svg') }}" width="4%">
+                    {% endfor %}
+                </li>
+                <li class="label"><a>Work Rate&nbsp&nbsp&nbsp<strong>{{ attributes['Work Rate'] }}</strong></a></li>
+                <li class="label"><a>Position&nbsp&nbsp&nbsp<strong>{{ attributes['Position'] }}</strong></a></li>
+                <li class="label"><a>Jersey Number&nbsp&nbsp&nbsp<strong>{{ attributes['Jersey Number'] }}</strong></a></li>
+            </div>
         </div>
     </div>
 {% endblock %}
