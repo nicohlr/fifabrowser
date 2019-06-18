@@ -76,12 +76,47 @@ h1 > * {
 
 .btn {
     border-radius: 15px;
-    color: #666;
-    padding: 12px 16px;
+    color: #757575;
+    padding: 3px 3px;
     cursor: pointer;
     text-decoration: none;
-    margin-top: 2vh;
+    margin-top: 3vh;
     float: left;
-    margin-left: 7vw;
     position: absolute;
+    font-size: 2.5vh;
+}
+
+.home {
+    margin-left: 7vw;
+}
+
+.help {
+    margin-left: 14vw;
+}
+
+.fa-arrow-left {
+    -webkit-text-stroke: 1px #F5F5F5;
+}
+
+.fa-question {
+    vertical-align: top;
+    -webkit-text-stroke: 1px #F5F5F5;
+}
+
+.btn:hover > .fa-arrow-left {
+    -webkit-text-stroke: 0.01px #757575;
+}
+
+.btn:hover > .fa-question {
+    -webkit-text-stroke: 0.01px #757575;
+}
+
+.qtip-bootstrap {
+    background: #F5F5F5;
+    text-align: justify;
+}
+
+.qtip-content {
+    text-align: justify;
+    font-size: 1vw;
 }

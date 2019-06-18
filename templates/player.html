@@ -2,12 +2,14 @@
 
 {% block head %}
     {{ super() }}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/qtip2/3.0.3/jquery.qtip.min.css"/>
     <link href="{{ url_for('static', filename='css/player.css') }}" rel="stylesheet" type="text/css">
 {% endblock %}
 
 {% block body %}
     <div class="dashboard">
-        <a class="btn" href="/"><i class="fa fa-arrow-left"></i>&nbsp&nbspHome</a>
+        <a class="btn home" href="/"><i class="fa fa-arrow-left"></i>&nbsp&nbspHome</a>
+        <a class="btn help"><i class="fa fa-question fa-lg"></i>&nbsp&nbspHelp</a>
         <h1 class="playername"><a>{{ attributes['Name'] }}&nbsp</a><img src="{{ attributes['Photo'] }}" width="4%"></h1>
         <div class="chart-container">
             <canvas id="myChart"></canvas>
@@ -47,6 +49,7 @@
 {% block scripts %}
     {{ super() }}
     <script>var attributes = {{ attributes|safe }}</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/jquery.qtip.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.js"></script>
     <script src="{{ url_for('static', filename='js/player.js') }}"></script>
 {% endblock %}

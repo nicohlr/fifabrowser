@@ -1,6 +1,20 @@
 var describe_attributes = {
 }
 
+$('.help').qtip({
+    content: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    style: { classes: 'qtip-bootstrap' },
+    position: {
+        my: "top left",
+        at: "bottom right",
+        target: $(".help"),
+    },
+    show: {
+        delay: 300,
+        solo: true
+    }
+});
+
 window.onload = function () {
     Chart.defaults.global.defaultFontFamily = 'Raleway';
     Chart.defaults.global.defaultFontSize = 10;
@@ -19,11 +33,18 @@ window.onload = function () {
                     'rgba(255, 0, 104, 0.6)',
                 pointBorderColor:
                     'rgba(255, 0, 104, 0.6)',
+                pointRadius: 8,
+                pointHoverRadius: 10,
                 data: [90, 70, 90, 40, 80, 60],
             },
             ]
         },
         options: {
+            scale: {
+                pointLabels: {
+                  fontSize: 200
+                }
+            },
             responsive: true,
             maintainAspectRatio: false,
             scale: {
