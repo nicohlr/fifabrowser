@@ -30,3 +30,11 @@ body {
 li {
     list-style-type: none;
 }
+
+.btn {
+    background: transparent !important;
+}
+
+.btn:hover {
+    font-family: 'Raleway_Bold', sans-serif;
+}
