@@ -20,9 +20,11 @@ Or directly install pyinstaller in the python default environment :
 
 Then, set the project directory as current working directory in a terminal and execute the following line:
 
-    pyinstaller -F --add-data "templates;templates" --add-data "static;static" --add-data "datasets;datasets" --add-data "secret_key.txt;." app.py
+    pyinstaller -F --add-data "templates;templates" --add-data "static;static" --add-data "datasets;datasets" --add-data "secret_key.txt;." __init__.py
     
-The process may last few minutes. When it's finished, the .exe file is located in the "dist" directory at the root of the project. You can double click on it from any computer (even if Python is not installed on this computer), it'll launch locally the website on the following address: "http://localhost:5000/".
+Note: you may have to generate a secret key and write it in the first line of the .txt file called secret_key.txt and located at the root of the project.
+
+The process may last a few minutes. When it's finished, the .exe file will be located in the "dist" directory at the root of the project. You can double click on it from any computer (even if Python is not installed on this computer), it'll launch locally the website on the following address: "http://localhost:5000/".
 
 ## Screenshots
 
