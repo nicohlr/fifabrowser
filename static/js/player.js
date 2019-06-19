@@ -1,14 +1,31 @@
-var describe_attributes = {
+function mean(numbers) {
+    var total = 0, i;
+    for (i = 0; i < numbers.length; i += 1) {
+        total += numbers[i];
+    }
+    return total / numbers.length;
+}
+
+var inner_attributes = {
     'Pace': ['Acceleration: ' + attributes['Acceleration'], 'Sprint speed: ' + attributes['SprintSpeed']],
     'Dribbling': ['Agility: ' + attributes['Agility'], 'Balance: ' + attributes['Balance'], 'Ball control: ' + attributes['BallControl'], 'Composure: ' + attributes['Composure'], 'Dribbling: ' + attributes['Dribbling'], 'Reactions: ' + attributes['Reactions']],
     'Shooting': ['Finishing: ' + attributes['Finishing'], 'Long shots: ' + attributes['LongShots'], 'Penalties: ' + attributes['Penalties'], 'Positioning: ' + attributes['Positioning'], 'Shot power: ' + attributes['ShotPower'], 'Volleys: ' + attributes['Volleys']],
-    'Defending': ['Heading: ' + attributes['HeadingAccuracy'], 'Interceptions: ' + attributes['Interceptions'], 'Marking: ' + attributes['Marking'], 'Sliding tackle: ' + attributes['SlidingTackle'], 'Standing tackle: ' + attributes['StandingTackle'],],
+    'Defending': ['Heading: ' + attributes['HeadingAccuracy'], 'Interceptions: ' + attributes['Interceptions'], 'Marking: ' + attributes['Marking'], 'Sliding tackle: ' + attributes['SlidingTackle'], 'Standing tackle: ' + attributes['StandingTackle']],
     'Passing': ['Crossing: ' + attributes['Crossing'], 'Curve: ' + attributes['Curve'], 'Free kick: ' + attributes['FKAccuracy'], 'Long passing: ' + attributes['LongPassing'], 'Short passing: ' + attributes['ShortPassing'], 'Vision: ' + attributes['Vision']],
     'Physicality': ['Aggression: ' + attributes['Aggression'], 'Jumping: ' + attributes['Jumping'], 'Stamina: ' + attributes['Stamina'], 'Strength: ' + attributes['Strength']]
-}
+};
+
+var global_attributes = [
+    Math.round(mean([attributes['Acceleration'], attributes['SprintSpeed']])),
+    Math.round(mean([attributes['Agility'], attributes['Balance'], attributes['BallControl'], attributes['Composure'], attributes['Dribbling'], attributes['Reactions']])),
+    Math.round(mean([attributes['Finishing'], attributes['LongShots'], attributes['Penalties'], attributes['Positioning'], attributes['ShotPower'], attributes['Volleys']])),
+    Math.round(mean([attributes['HeadingAccuracy'], attributes['Interceptions'], attributes['Marking'], attributes['SlidingTackle'], attributes['StandingTackle']])),
+    Math.round(mean([attributes['Crossing'], attributes['Curve'], attributes['FKAccuracy'], attributes['LongPassing'], attributes['ShortPassing'], attributes['Vision']])),
+    Math.round(mean([attributes['Aggression'], attributes['Jumping'], attributes['Stamina'], attributes['Strength']])),
+];
 
 $('.help').qtip({
-    content: "You can hover the points of the radar chart to have detailled statistics on this player.",
+    content: "You can hover the points of the radar chart to have detailled statistics on this player.<br><br>Grades displayed are just the mean of corresponding inner attributes. Therefore, it may exist some differences between displayed grades and the official grades given on FUT cards. ",
     style: { classes: 'qtip-bootstrap' },
     position: {
         my: "top left",
@@ -41,7 +58,7 @@ window.onload = function () {
                     'rgba(255, 0, 104, 0.6)',
                 pointRadius: 8,
                 pointHoverRadius: 10,
-                data: [90, 70, 90, 40, 80, 60],
+                data: global_attributes,
             },
             ]
         },
@@ -65,8 +82,13 @@ window.onload = function () {
                 bodyFontSize: 10,
                 enabled: true,
                 callbacks: {
+                    title: function(tooltipItem, data) {
+                        console.log(tooltipItem);
+                        console.log(data);
+                        return data.labels[tooltipItem[0].index] + ': ' + data.datasets[0].data[tooltipItem[0].index];
+                    },
                     label: function(tooltipItem, data) {
-                        return describe_attributes[data.labels[tooltipItem.index]];
+                        return inner_attributes[data.labels[tooltipItem.index]];
                     }
                 }
             }
