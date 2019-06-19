@@ -53,6 +53,7 @@ $('.help').qtip({
 });
 
 window.onload = function () {
+
     Chart.defaults.global.defaultFontFamily = 'Raleway';
     Chart.defaults.global.defaultFontSize = 10;
     var ctx = document.getElementById('myChart').getContext('2d');
