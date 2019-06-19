@@ -33,7 +33,7 @@ def home():
     return render_template('home.html', form=player_form, players_list=players_list, players_pattern=players_pattern)
 
 
-@app.route('/player_<name>')
+@app.route('/<name>')
 def player(name):
     playername = session.get('playername', None).strip()
     attributes = get_player_attributes(playername=playername)
