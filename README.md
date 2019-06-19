@@ -18,7 +18,9 @@ Or directly install pyinstaller in the python default environment :
 
     pip install pyinstaller
 
-Then, set the project directory as current working directory in a terminal and execute the following line:
+**Step 3**
+ 
+Set the project directory as current working directory in a terminal and execute the following line:
 
     pyinstaller -F --add-data "templates;templates" --add-data "static;static" --add-data "datasets;datasets" --add-data "secret_key.txt;." __init__.py
     
