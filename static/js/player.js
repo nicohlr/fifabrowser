@@ -15,14 +15,28 @@ var inner_attributes = {
     'Physicality': ['Aggression: ' + attributes['Aggression'], 'Jumping: ' + attributes['Jumping'], 'Stamina: ' + attributes['Stamina'], 'Strength: ' + attributes['Strength']]
 };
 
-var global_attributes = [
-    Math.round(mean([attributes['Acceleration'], attributes['SprintSpeed']])),
-    Math.round(mean([attributes['Agility'], attributes['Balance'], attributes['BallControl'], attributes['Composure'], attributes['Dribbling'], attributes['Reactions']])),
-    Math.round(mean([attributes['Finishing'], attributes['LongShots'], attributes['Penalties'], attributes['Positioning'], attributes['ShotPower'], attributes['Volleys']])),
-    Math.round(mean([attributes['HeadingAccuracy'], attributes['Interceptions'], attributes['Marking'], attributes['SlidingTackle'], attributes['StandingTackle']])),
-    Math.round(mean([attributes['Crossing'], attributes['Curve'], attributes['FKAccuracy'], attributes['LongPassing'], attributes['ShortPassing'], attributes['Vision']])),
-    Math.round(mean([attributes['Aggression'], attributes['Jumping'], attributes['Stamina'], attributes['Strength']])),
-];
+if (attributes['Position'] === 'GK') {
+    var labels_attributes = ['Diving', 'Reflexes', 'Handling', 'Speed', 'Kicking', 'Positioning'];
+    var global_attributes = [
+        Math.round([attributes['GKDiving']]),
+        Math.round([attributes['GKReflexes']]),
+        Math.round([attributes['GKHandling']]),
+        Math.round(mean([attributes['Acceleration'], attributes['SprintSpeed']])),
+        Math.round([attributes['GKKicking']]),
+        Math.round([attributes['GKPositioning']]),
+    ];
+}
+else {
+    var labels_attributes = ['Pace', 'Dribbling', 'Shooting', 'Defending', 'Passing', 'Physicality'];
+    var global_attributes = [
+        Math.round(mean([attributes['Acceleration'], attributes['SprintSpeed']])),
+        Math.round(mean([attributes['Agility'], attributes['Balance'], attributes['BallControl'], attributes['Composure'], attributes['Dribbling'], attributes['Reactions']])),
+        Math.round(mean([attributes['Finishing'], attributes['LongShots'], attributes['Penalties'], attributes['Positioning'], attributes['ShotPower'], attributes['Volleys']])),
+        Math.round(mean([attributes['HeadingAccuracy'], attributes['Interceptions'], attributes['Marking'], attributes['SlidingTackle'], attributes['StandingTackle']])),
+        Math.round(mean([attributes['Crossing'], attributes['Curve'], attributes['FKAccuracy'], attributes['LongPassing'], attributes['ShortPassing'], attributes['Vision']])),
+        Math.round(mean([attributes['Aggression'], attributes['Jumping'], attributes['Stamina'], attributes['Strength']])),
+    ];
+}
 
 $('.help').qtip({
     content: "You can hover the points of the radar chart to have detailled statistics on this player.<br><br>Grades displayed are just the mean of corresponding inner attributes. Therefore, it may exist some differences between displayed grades and the official grades given on FUT cards. ",
@@ -45,7 +59,7 @@ window.onload = function () {
     var myChart = new Chart(ctx, {
         type: 'radar',
         data: {
-            labels:  ['Pace', 'Dribbling', 'Shooting', 'Defending', 'Passing', 'Physicality'],
+            labels: labels_attributes,
             datasets: [{
                 label: "Player's statistics",
                 backgroundColor:
