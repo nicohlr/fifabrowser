@@ -30,6 +30,11 @@ def get_player_attributes(playername):
         ['Value', 'Wage', 'Special', 'Joined', 'Loaned From', 'Contract Valid Until', 'LS', 'ST', 'RS',
          'LW', 'LF', 'CF', 'RF', 'RW', 'LAM', 'CAM', 'RAM', 'LM', 'LCM', 'CM', 'RCM', 'RM', 'LWB', 'LDM', 'CDM', 'RDM',
          'RWB', 'LB', 'LCB', 'CB', 'RCB', 'RB', ], 1).columns.tolist()[2:-1]]
-    temp = df['Work Rate'].str.split('/', expand=True)
-    df['Work Rate'] = temp[0] + ' / ' + temp[1]
+
+    temp_wr = df['Work Rate'].str.split('/', expand=True)
+    df['Work Rate'] = temp_wr[0] + ' / ' + temp_wr[1]
+
+    temp_pic = df['Photo'].str.split('players/4', expand=True)
+    df['Photo'] = temp_pic[0] + 'players/10' + temp_pic[1]
+
     return df[df['Name'] == playername].to_dict('r')[0]
