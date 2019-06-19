@@ -1,3 +1,3 @@
-# fifa_browser
+# Fifafinder
 
-User interface on top of kaggle fifa 19 players dataset. This website was made using [Flask](http://flask.pocoo.org/docs/1.0/).
+User interface on top of [kaggle FIFA 19 complete player dataset](https://www.kaggle.com/karangadiya/fifa19). This website was made using [Flask](http://flask.pocoo.org/docs/1.0/).
