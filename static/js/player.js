@@ -1,3 +1,4 @@
+// USEFUL FUNCTIONS
 function mean(numbers) {
     var total = 0, i;
     for (i = 0; i < numbers.length; i += 1) {
@@ -6,6 +7,7 @@ function mean(numbers) {
     return total / numbers.length;
 }
 
+// COMPUTES ATTRIBUTES OF THE PLAYER (HANDLE GOALKEEPER CASE)
 var inner_attributes = {
     'Pace': ['Acceleration: ' + attributes['Acceleration'], 'Sprint speed: ' + attributes['SprintSpeed']],
     'Dribbling': ['Agility: ' + attributes['Agility'], 'Balance: ' + attributes['Balance'], 'Ball control: ' + attributes['BallControl'], 'Composure: ' + attributes['Composure'], 'Dribbling: ' + attributes['Dribbling'], 'Reactions: ' + attributes['Reactions']],
@@ -38,6 +40,7 @@ else {
     ];
 }
 
+// QTIPS
 $('.help').qtip({
     content: "You can hover the points of the radar chart to have detailled statistics on this player.<br><br>Grades displayed are calculated using the mean of corresponding inner attributes. Therefore, it may exist some differences between displayed grades and the official grades given on EA FUT cards. ",
     style: { classes: 'qtip-bootstrap' },
@@ -54,6 +57,7 @@ $('.help').qtip({
 
 window.onload = function () {
 
+    // RADAR CHART
     Chart.defaults.global.defaultFontFamily = 'Raleway';
     Chart.defaults.global.defaultFontSize = 10;
     var ctx = document.getElementById('myChart').getContext('2d');
@@ -110,6 +114,7 @@ window.onload = function () {
         }
     });
 
+    // GRADES PARENT DIV COLOR DEPENDING ON GRADES VALUES
     if (attributes['Overall'] >= 80) {
         $('.overall').css('background', '#1A7E52')
     }
