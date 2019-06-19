@@ -1,6 +1,6 @@
 # Fifafinder
 
-User interface on top of [kaggle FIFA 19 complete player dataset](https://www.kaggle.com/karangadiya/fifa19). This webapp was made using [Flask](http://flask.pocoo.org/docs/1.0/).
+User interface on top of [kaggle FIFA 19 complete player dataset](https://www.kaggle.com/karangadiya/fifa19). This webapp was made using [Flask](http://flask.pocoo.org/docs/1.0/) and [Chart.js](https://www.chartjs.org/).
 
 ## Export as .exe
 
@@ -26,7 +26,7 @@ Set the project directory as current working directory in a terminal and execute
     
 Note: you may have to generate a secret key and write it in the first line of the .txt file called secret_key.txt and located at the root of the project.
 
-The process may last a few minutes. When it's finished, the .exe file will be located in the "dist" directory at the root of the project. You can double click on it from any computer (even if Python is not installed on this computer), it'll launch locally the website on the following address: "http://localhost:5000/".
+The process may last a few minutes. When it's finished, **the .exe file will be located in the "dist" directory at the root of the project**. You can double click on it from any computer (even if Python is not installed on this computer), it'll launch locally the website on the following address: "http://localhost:5000/".
 
 ## Screenshots
 
