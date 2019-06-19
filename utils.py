@@ -27,7 +27,7 @@ def get_player_pattern():
 def get_player_attributes(playername):
     df = pd.read_csv('data/data.csv')
     df = df[df.drop(
-        ['Value', 'Wage', 'Real Face', 'Special', 'Joined', 'Loaned From', 'Contract Valid Until', 'LS', 'ST', 'RS',
+        ['Value', 'Wage', 'Special', 'Joined', 'Loaned From', 'Contract Valid Until', 'LS', 'ST', 'RS',
          'LW', 'LF', 'CF', 'RF', 'RW', 'LAM', 'CAM', 'RAM', 'LM', 'LCM', 'CM', 'RCM', 'RM', 'LWB', 'LDM', 'CDM', 'RDM',
          'RWB', 'LB', 'LCB', 'CB', 'RCB', 'RB', ], 1).columns.tolist()[2:-1]]
     temp = df['Work Rate'].str.split('/', expand=True)
