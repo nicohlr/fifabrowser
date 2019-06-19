@@ -39,7 +39,7 @@ else {
 }
 
 $('.help').qtip({
-    content: "You can hover the points of the radar chart to have detailled statistics on this player.<br><br>Grades displayed are just the mean of corresponding inner attributes. Therefore, it may exist some differences between displayed grades and the official grades given on FUT cards. ",
+    content: "You can hover the points of the radar chart to have detailled statistics on this player.<br><br>Grades displayed are calculated using the mean of corresponding inner attributes. Therefore, it may exist some differences between displayed grades and the official grades given on EA FUT cards. ",
     style: { classes: 'qtip-bootstrap' },
     position: {
         my: "top left",
