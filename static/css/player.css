@@ -129,3 +129,46 @@ h1 {
     text-align: justify;
     font-size: 1vw;
 }
+
+/* RESPONSIVE DESIGN */
+@media all and (max-width:900px) {
+    body {
+        overflow-y: auto
+    }
+    .chart-container {
+        margin-top: 1%;
+        float: left;
+        width: 90%;
+        margin-left: 5%;
+        height: 60vh;
+    }
+
+    .stats-container {
+        margin-top: 1%;
+        float: none;
+        width: 90%;
+        margin-left: 5%;
+        border-width: 0px;
+    }
+    .stats-container > * {
+        padding-left: 0%;
+        text-align: center;
+    }
+    .overall, .potential {
+        margin: 8% -14% 3% 18% !important;
+    }
+    h1 {
+        margin-left: 25vw;
+    }
+    h1 > img {
+        display: none;
+    }
+    .home {
+        margin-left: 4vw;
+        margin-top: 1vh;
+    }
+    .help {
+        margin-top: 5vh;
+        margin-left: 4vw;
+    }
+}
