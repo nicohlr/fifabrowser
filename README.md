@@ -28,6 +28,6 @@ The process may last a few minutes. When it's finished, the .exe file will be lo
 
 ## Screenshots
 
-![](https://raw.githubusercontent.com/nicohlr/fifafinder/master/static/img/screenshots/homepage.PNG?token=AGBM2WO57MZPO2NEF6FTVKS5BI3SO)
+<img src="./static/img/screenshots/homepage.PNG">
 
-![](https://raw.githubusercontent.com/nicohlr/fifafinder/master/static/img/screenshots/playerpage.PNG?token=AGBM2WKAUX3JCRI3SENTEC25BI3WK)
+<img src="./static/img/screenshots/playerpage.PNG">
