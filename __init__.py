@@ -5,6 +5,7 @@ import webbrowser
 from form import PlayerForm
 from utils import get_player_list, get_player_pattern, get_player_attributes, resource_path
 
+# Check if the website is launched using a executable file
 if getattr(sys, 'frozen', False):
     template_folder = os.path.join(sys._MEIPASS, 'templates')
     static_folder = os.path.join(sys._MEIPASS, 'static')
@@ -17,6 +18,9 @@ app.secret_key = open(resource_path('secret_key.txt')).readline()[:-1]
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
+    """
+    Homepage function: get playername inputed by user
+    """
     player_form = PlayerForm(request.form)
     players_list = get_player_list()
     players_pattern = get_player_pattern()
@@ -35,11 +39,15 @@ def home():
 
 @app.route('/<name>')
 def player(name):
+    """
+    Playerpage function: get attributes of the player and pass it to HTML frontend
+    """
     playername = session.get('playername', None).strip()
     attributes = get_player_attributes(playername=playername)
     return render_template('player.html', attributes=attributes)
 
 
+# Functions to fix pages not changing when code is changing on mac
 @app.context_processor
 def override_url_for():
     return dict(url_for=dated_url_for)
