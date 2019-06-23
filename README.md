@@ -1,6 +1,6 @@
-# Fifafinder
+# [**Fifafinder**](https://fifafinder.pythonanywhere.com)
 
-User interface on top of [kaggle FIFA 19 complete player dataset](https://www.kaggle.com/karangadiya/fifa19). This webapp was made using [Flask](http://flask.pocoo.org/docs/1.0/) and [Chart.js](https://www.chartjs.org/).
+User interface on top of [kaggle FIFA 19 complete player dataset](https://www.kaggle.com/karangadiya/fifa19). This webapp was made using [Flask](http://flask.pocoo.org/docs/1.0/) and [Chart.js](https://www.chartjs.org/). You can try the app [**here**](https://fifafinder.pythonanywhere.com).
 
 ## Export as .exe
 
