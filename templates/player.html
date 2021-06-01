@@ -8,11 +8,15 @@
 
 {% block body %}
     <div class="dashboard">
-        <a class="btn home" href="/"><i class="fa fa-arrow-left"></i>&nbsp&nbspHome</a>
-        <a class="btn help"><i class="fa fa-question fa-lg"></i>&nbsp&nbspHelp</a>
-        <h1>
-            <a>{{ attributes['Name'] }}</a>
-        </h1>
+        <div class="buttons">
+            <a class="btn home" href="/"><i class="fa fa-arrow-left"></i>&nbsp&nbspHome</a>
+            <a class="btn help"><i class="fa fa-question fa-lg"></i>&nbsp&nbspHelp</a>
+        </div>
+        <div class="title">
+            <h1>
+                <a>{{ attributes['Name'] }} ({{ attributes['Club'] }})</a>
+            </h1>
+        </div>
         <div class="chart-container">
             <canvas id="myChart"></canvas>
         </div>

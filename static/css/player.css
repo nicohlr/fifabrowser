@@ -6,7 +6,7 @@ body {
 /* CONTAINERS */
 
 .chart-container {
-    margin-top: 1%;
+    margin-top: 2.5%;
     float: left;
     width: 45%;
     margin-left: 5%;
@@ -37,8 +37,8 @@ h1 {
     text-align: center;
     margin-top: 3%;
     color: #757575;
-    font-size: 7vh;
-    margin-bottom: 0vh;
+    font-size: 6vh;
+    margin-bottom: 1.5%;
 }
 
 .logo {
@@ -96,7 +96,6 @@ h1 {
     cursor: pointer;
     text-decoration: none;
     margin-top: 3vh;
-    float: left;
     position: absolute;
     font-size: 2.5vh;
 }
@@ -135,6 +134,19 @@ h1 {
     body {
         overflow-y: auto
     }
+    .btn {
+        margin-top: -10%;
+        font-size: 5vw;
+    }
+    .title {
+        margin-top: 15vw;
+    }
+    .home {
+        margin-left: 20vw;
+    }
+    .help {
+        margin-left: 57vw;
+    }
     .chart-container {
         margin-top: 1%;
         float: left;
@@ -142,7 +154,6 @@ h1 {
         margin-left: 5%;
         height: 60vh;
     }
-
     .stats-container {
         margin-top: 1%;
         float: none;
@@ -156,19 +167,5 @@ h1 {
     }
     .overall, .potential {
         margin: 8% -14% 3% 18% !important;
-    }
-    h1 {
-        margin-left: 25vw;
-    }
-    h1 > img {
-        display: none;
-    }
-    .home {
-        margin-left: 4vw;
-        margin-top: 1vh;
-    }
-    .help {
-        margin-top: 5vh;
-        margin-left: 4vw;
     }
 }
