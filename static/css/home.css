@@ -81,7 +81,7 @@ input[type="submit"]:hover {
 }
 
 /* RESPONSIVE DESIGN */
-@media all and (max-width:1280px) {
+@media all and (max-width:900px) {
     .search_container {
         width: 80% !important;
         margin-left: 10% !important;

@@ -105,3 +105,4 @@ venv.bak/
 
 .idea/
 secret_key.txt
+.vscode/

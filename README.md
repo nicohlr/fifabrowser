@@ -1,34 +1,49 @@
-# Fifafinder
+# Fifabrowser
 
 User interface on top of [kaggle FIFA 19 complete player dataset](https://www.kaggle.com/karangadiya/fifa19). This webapp was made using [Flask](http://flask.pocoo.org/docs/1.0/) and [Chart.js](https://www.chartjs.org/). 
 
-[**You can try the app by clicking here**](https://fifafinder.pythonanywhere.com).
+[**You can try the app by clicking here**](https://fifabrowser.herokuapp.com/)
 
-## Export as .exe
+## Run locally
 
-**Step 1**
+Docker makes it easy to run the app locally:
 
-In the file __ init __.py, uncomment the before last line of the file (which launch the webbrowser on execution) and set the "debug" argument of the run method to "False" in the last line of the file. 
+    docker build -t fifabrowser:1.0 .
+    docker run -p 5000:5000 -d fifabrowser:1.0
 
-**Step 2** 
+You can now open your browser at http://localhost:5000/ to use the app.
 
-In a terminal, activate a venv on which is installed pyinstaller :
+## Deployment (Docker & Heroku)
 
-    activate *YOUR_VIRTUAL_ENVIRONMENT*
-    
-Or directly install pyinstaller in the python default environment :
+Install [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli#download-and-install).
+
+Sign in to Heroku and to the Container Registry:
+
+    heroku login -i
+    heroku container:login
+
+Push the Docker image to the registry (it will build the docker image using the [Dockerfile](Dockerfile)):
+
+    heroku container:push web --app <YOUR_HEROKU_APP_NAME>
+
+Deploy the app:
+
+    heroku container:release web --app <YOUR_HEROKU_APP_NAME>
+
+## Export as executable
+
+Install pyinstaller:
 
     pip install pyinstaller
-
-**Step 3**
  
-Set the project directory as current working directory in a terminal and execute the following line:
+Run:
 
-    pyinstaller -F --add-data "templates;templates" --add-data "static;static" --add-data "data;data" --add-data "secret_key.txt;." __init__.py
+    pyinstaller -F --add-data "templates:templates" \
+                   --add-data "static:static" \
+                   --add-data "data:data" \
+                   app.py
     
-Note: you may have to generate a secret key and write it in the first line of the .txt file called secret_key.txt and located at the root of the project.
-
-The process may last a few minutes. When it's finished, **the .exe file will be located in the "dist" directory at the root of the project**. You can double click on it from any computer (even if Python is not installed on this computer), it'll launch locally the website on the following address: "http://localhost:5000/".
+The executable file will be **located in the newly created `dist` directory**, at the root of the project. You can launch it from any computer (even if Python is not installed), the application will be accessible at: http://localhost:5000/.
 
 ## Screenshots
 

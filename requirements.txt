@@ -1,0 +1,4 @@
+flask==2.0.1
+wtforms==2.3.3
+pandas==1.1.5
+unidecode==1.2

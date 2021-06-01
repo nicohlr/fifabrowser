@@ -8,17 +8,15 @@
 
 {% block body %}
     <div class="dashboard">
-        <a class="btn home" href="/"><i class="fa fa-arrow-left"></i>&nbsp&nbspHome</a>
-        <a class="btn help"><i class="fa fa-question fa-lg"></i>&nbsp&nbspHelp</a>
-        <h1>
-            <a>{{ attributes['Name'] }}</a>
-            {% if attributes['Real Face'] == 'Yes' %}
-                <img class="face" src="{{ attributes['Photo'] }}" width="4%" onerror="this.src='https://cdn.sofifa.org/players/10/notfound_0.png'">
-            {% else %}
-                <img class="face" src="https://cdn.sofifa.org/players/10/notfound_0.png" width="4%">
-            {% endif %}
-            <img class="logo" src="{{ attributes['Club Logo'] }}" width="2%">
-        </h1>
+        <div class="buttons">
+            <a class="btn home" href="/"><i class="fa fa-arrow-left"></i>&nbsp&nbspHome</a>
+            <a class="btn help"><i class="fa fa-question fa-lg"></i>&nbsp&nbspHelp</a>
+        </div>
+        <div class="title">
+            <h1>
+                <a>{{ attributes['Name'] }} ({{ attributes['Club'] }})</a>
+            </h1>
+        </div>
         <div class="chart-container">
             <canvas id="myChart"></canvas>
         </div>
