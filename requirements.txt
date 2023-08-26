@@ -1,4 +1,5 @@
 flask==2.0.1
 wtforms==2.3.3
-pandas==1.1.5
+pandas==2.0.3
 unidecode==1.2
+fastparquet==2023.7.0
