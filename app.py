@@ -13,8 +13,8 @@ from flask import (
     jsonify,
 )
 
-from form import PlayerForm
-from utils import (
+from utils.form import PlayerForm
+from utils.utils import (
     get_player_list,
     get_player_pattern,
     get_player_attributes,
